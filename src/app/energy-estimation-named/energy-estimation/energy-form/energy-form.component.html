@@ -1,0 +1,17 @@
+<form (ngSubmit)="onSubmit()" [formGroup]="form">
+    <label>
+        Consommation annuelle de KW/H :
+        <input formControlName="annualConsumption" type="number">
+    </label>
+    <label>
+        Prix de l'abonnement par mois :
+        <input formControlName="monthlySubscription" type="number">
+    </label>
+    <label>
+        Prix du KW/H :
+        <input formControlName="kiloWattPrice" type="number">
+    </label>
+    <button (click)="onCancel()" class="margin1pc">Réinitialiser</button>
+    <button class="margin1pc" type="submit">Calculer</button>
+</form>
+<app-energy-form-result [energyFormTyped]="energyFormTyped"></app-energy-form-result>

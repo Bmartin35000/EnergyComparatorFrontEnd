@@ -1,0 +1,16 @@
+<div *ngIf="energyFormTyped && energyFormTyped.total">
+    <mat-accordion>
+        <mat-expansion-panel>
+            <mat-expansion-panel-header>
+                <mat-panel-title>Votre abonnement annuel est estimé
+                    à {{ energyFormTyped.total!.subscription.annualPrice + energyFormTyped.total!.kilowatt.annualPrice }}
+                    € par an.
+                </mat-panel-title>
+            </mat-expansion-panel-header>
+            <p>Abonnement : {{ energyFormTyped.total!.subscription.annualPrice }} €
+                ({{ energyFormTyped.total!.subscription.monthlyPrice }} € * 12)</p>
+            <p>Kilowatt : {{ energyFormTyped.total!.kilowatt.annualPrice }} €
+                ({{ energyFormTyped.total!.kilowatt.monthlyPrice }} € * 12)</p>
+        </mat-expansion-panel>
+    </mat-accordion>
+</div>

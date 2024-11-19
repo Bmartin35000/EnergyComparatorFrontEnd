@@ -1,0 +1,40 @@
+<table [dataSource]="energyEstimations" class="width100pc" mat-table>
+    <tr *matHeaderRowDef="displayedColumns" mat-header-row></tr>
+    <tr *matRowDef="let row; columns: displayedColumns;" mat-row></tr>
+
+    <ng-container matColumnDef="offerName">
+        <th *matHeaderCellDef mat-header-cell>Nom</th>
+        <td *matCellDef="let element" mat-cell>{{ element.offerName }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="energySupplier">
+        <th *matHeaderCellDef mat-header-cell>Fournisseur</th>
+        <td *matCellDef="let element" mat-cell>{{ element.energySupplier }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="energyPrice">
+        <th *matHeaderCellDef mat-header-cell>Energie</th>
+        <td *matCellDef="let element" mat-cell
+            title="{{ element.energy.total.subscription.monthlyPrice }}€/month + {{ element.energy.total.kilowatt.monthlyPrice }}€/KW">
+            {{ element.energy.total.subscription.annualPrice + element.energy.total.kilowatt.annualPrice }}€
+        </td>
+    </ng-container>
+
+    <ng-container matColumnDef="gasPrice">
+        <th *matHeaderCellDef mat-header-cell>Gaz</th>
+        <td *matCellDef="let element" mat-cell
+            title="{{ element.gas.total.subscription.monthlyPrice }}€/month + {{ element.gas.total.kilowatt.monthlyPrice }}€/KW">
+            {{ element.gas.total.subscription.annualPrice + element.gas.total.kilowatt.annualPrice }}€
+        </td>
+    </ng-container>
+
+    <ng-container matColumnDef="totalPrice">
+        <th *matHeaderCellDef mat-header-cell>Total</th>
+        <td *matCellDef="let element" mat-cell>
+            {{
+                element.energy.total.subscription.annualPrice + element.energy.total.kilowatt.annualPrice
+                + element.gas.total.subscription.annualPrice + element.gas.total.kilowatt.annualPrice
+            }}€
+        </td>
+    </ng-container>
+</table>

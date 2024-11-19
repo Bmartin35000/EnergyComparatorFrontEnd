@@ -1,0 +1,18 @@
+<div class="center_parent ">
+    <div class="center_child border">
+        <form (ngSubmit)="onSubmit()" [formGroup]="form">
+            <label>
+                Fournisseur d'énergie :
+                <input formControlName="energySupplier">
+            </label>
+            <label>
+                Nom de l'offre :
+                <input formControlName="offerName">
+            </label>
+            <app-energy-estimation [energyFormTypedEnergy]="currentEnergyEstimationComponent.energyFormTypedEnergy"
+                                   [energyFormTypedGas]="currentEnergyEstimationComponent.energyFormTypedGas"></app-energy-estimation>
+            <button (click)="onCancel()" class="margin1pc">Réinitialiser</button>
+            <button class="margin1pc" type="submit">Sauvegarder</button>
+        </form>
+    </div>
+</div>

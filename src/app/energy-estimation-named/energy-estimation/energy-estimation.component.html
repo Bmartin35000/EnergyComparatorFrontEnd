@@ -1,0 +1,49 @@
+<div class="horizontal_parent border">
+    <div class="horizontal_child border blue">
+        <h1>Energie
+            <i class="material-icons">bolt</i>
+        </h1>
+        <app-energy-form [energyFormTyped]="energyFormTypedEnergy"></app-energy-form>
+    </div>
+
+    <div class="horizontal_child border green">
+        <h1>Gaz
+            <i class="material-icons">propane_tank</i>
+        </h1>
+        <app-energy-form [energyFormTyped]="energyFormTypedGas"></app-energy-form>
+    </div>
+</div>
+
+<div class="center_parent">
+    <div *ngIf="energyFormTypedEnergy && energyFormTypedEnergy.total && energyFormTypedGas && energyFormTypedGas.total"
+         class="center_child border">
+        <h1>Estimation des deux abonnements</h1>
+        <mat-accordion>
+            <mat-expansion-panel>
+                <mat-expansion-panel-header>
+                    <mat-panel-title class="center_child">Votre abonnement annuel est estimé
+                        à {{
+                            energyFormTypedEnergy.total!.subscription.annualPrice + energyFormTypedEnergy.total!.kilowatt.annualPrice
+                            + energyFormTypedGas.total!.subscription.annualPrice + energyFormTypedGas.total!.kilowatt.annualPrice
+                        }}
+                        € par an.
+                    </mat-panel-title>
+                </mat-expansion-panel-header>
+                <div class="horizontal_parent">
+                    <div class="horizontal_child border blue">
+                        <h2>Energie
+                            <i class="material-icons">bolt</i>
+                        </h2>
+                        <app-energy-form-result [energyFormTyped]="energyFormTypedEnergy"></app-energy-form-result>
+                    </div>
+                    <div class="horizontal_child border green">
+                        <h2>Gaz
+                            <i class="material-icons">propane_tank</i>
+                        </h2>
+                        <app-energy-form-result [energyFormTyped]="energyFormTypedGas"></app-energy-form-result>
+                    </div>
+                </div>
+            </mat-expansion-panel>
+        </mat-accordion>
+    </div>
+</div>
