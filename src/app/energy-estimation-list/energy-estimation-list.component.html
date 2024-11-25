@@ -1,3 +1,8 @@
+<button (click)="onDeleteAll()" class="margin1pc">
+    Supprimer les estimations
+    <i class="material-icons">delete</i>
+</button>
+
 <table [dataSource]="energyEstimations" class="width100pc" mat-table>
     <tr *matHeaderRowDef="displayedColumns" mat-header-row></tr>
     <tr *matRowDef="let row; columns: displayedColumns;" mat-row></tr>
@@ -13,10 +18,11 @@
     </ng-container>
 
     <ng-container matColumnDef="energyPrice">
-        <th *matHeaderCellDef mat-header-cell>Energie</th>
+        <th *matHeaderCellDef mat-header-cell>Electricité</th>
         <td *matCellDef="let element" mat-cell
-            title="{{ element.energy.total.subscription.monthlyPrice }}€/month + {{ element.energy.total.kilowatt.monthlyPrice }}€/KW">
-            {{ element.energy.total.subscription.annualPrice + element.energy.total.kilowatt.annualPrice }}€
+            title="{{ element.electricity.total.subscription.monthlyPrice }} }}€/month + {{ element.electricity.total.kilowatt.monthlyPrice }}€/KW">
+            {{ element.electricity.total.subscription.annualPrice + element.electricity.total.kilowatt.annualPrice | roundedUp }}
+            €
         </td>
     </ng-container>
 
@@ -24,7 +30,7 @@
         <th *matHeaderCellDef mat-header-cell>Gaz</th>
         <td *matCellDef="let element" mat-cell
             title="{{ element.gas.total.subscription.monthlyPrice }}€/month + {{ element.gas.total.kilowatt.monthlyPrice }}€/KW">
-            {{ element.gas.total.subscription.annualPrice + element.gas.total.kilowatt.annualPrice }}€
+            {{ element.gas.total.subscription.annualPrice + element.gas.total.kilowatt.annualPrice | roundedUp }}€
         </td>
     </ng-container>
 
@@ -32,8 +38,9 @@
         <th *matHeaderCellDef mat-header-cell>Total</th>
         <td *matCellDef="let element" mat-cell>
             {{
-                element.energy.total.subscription.annualPrice + element.energy.total.kilowatt.annualPrice
+                element.electricity.total.subscription.annualPrice + element.electricity.total.kilowatt.annualPrice
                 + element.gas.total.subscription.annualPrice + element.gas.total.kilowatt.annualPrice
+                    | roundedUp
             }}€
         </td>
     </ng-container>

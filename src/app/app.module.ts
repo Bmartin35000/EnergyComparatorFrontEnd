@@ -17,6 +17,8 @@ import {
     EnergyFormResultComponent
 } from "./energy-estimation-named/energy-estimation/energy-form/energy-form-result/energy-form-result.component";
 import {MatTableModule} from "@angular/material/table";
+import {RoundedUp} from "./energy-estimation-list/roundedUp";
+import {MatSnackBarModule} from "@angular/material/snack-bar";
 
 @NgModule({
     imports: [
@@ -32,6 +34,7 @@ import {MatTableModule} from "@angular/material/table";
         BrowserAnimationsModule,
         MatIconModule,
         MatTableModule,
+        MatSnackBarModule
     ],
     declarations: [
         AppComponent,
@@ -41,6 +44,7 @@ import {MatTableModule} from "@angular/material/table";
         EnergyFormResultComponent,
         EnergyEstimationNamedComponent,
         EnergyEstimationListComponent,
+        RoundedUp
     ],
     bootstrap: [AppComponent],
 })

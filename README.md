@@ -4,7 +4,8 @@ angular version 13.1.4
 
 TODO
 
-- add des tooltip
 - ajouter des liens vers des fournisseurs
-- fix les routes pour sauvegarder les estimations
-- push sur un nouveau repo git
+- permettre la séparation des deux offres
+- permettre un PUT
+- déplacer la conso annuelle dans le cache
+- ajouter des tests

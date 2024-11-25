@@ -1,0 +1,30 @@
+{
+  "energy": {
+    "type": "Energy",
+    "total": {
+      "subscription": {
+        "monthlyPrice": 5,
+        "annualPrice": 60
+      },
+      "kilowatt": {
+        "monthlyPrice": 10,
+        "annualPrice": 120
+      }
+    }
+  },
+  "gas": {
+    "type": "Gas",
+    "total": {
+      "subscription": {
+        "monthlyPrice": 5,
+        "annualPrice": 60
+      },
+      "kilowatt": {
+        "monthlyPrice": 10,
+        "annualPrice": 120
+      }
+    }
+  },
+  "energySupplier": "edf",
+  "offerName": "super"
+}

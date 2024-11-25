@@ -2,8 +2,15 @@ import {EnergyFormTyped} from "./energy-form/EnergyFormTyped";
 
 
 export class EnergyEstimation {
-    energy: EnergyFormTyped;
+    electricity: EnergyFormTyped;
     gas: EnergyFormTyped;
     energySupplier: string;
     offerName: string;
+
+    constructor(electricity: EnergyFormTyped, gas: EnergyFormTyped, energySupplier: string, offerName: string) {
+        this.electricity = electricity;
+        this.gas = gas;
+        this.energySupplier = energySupplier;
+        this.offerName = offerName;
+    }
 }

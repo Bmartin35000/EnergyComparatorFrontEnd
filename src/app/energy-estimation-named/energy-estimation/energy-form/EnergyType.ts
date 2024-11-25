@@ -1,3 +1,3 @@
 export enum EnergyType {
-    Energy, Gas
+    Electricity, Gas
 }

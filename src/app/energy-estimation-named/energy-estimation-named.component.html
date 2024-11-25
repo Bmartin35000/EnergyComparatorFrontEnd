@@ -9,8 +9,9 @@
                 Nom de l'offre :
                 <input formControlName="offerName">
             </label>
-            <app-energy-estimation [energyFormTypedEnergy]="currentEnergyEstimationComponent.energyFormTypedEnergy"
-                                   [energyFormTypedGas]="currentEnergyEstimationComponent.energyFormTypedGas"></app-energy-estimation>
+            <app-energy-estimation
+                    [energyFormTypedElectricity]="currentEnergyEstimationComponent.energyFormTypedElectricity"
+                    [energyFormTypedGas]="currentEnergyEstimationComponent.energyFormTypedGas"></app-energy-estimation>
             <button (click)="onCancel()" class="margin1pc">Réinitialiser</button>
             <button class="margin1pc" type="submit">Sauvegarder</button>
         </form>

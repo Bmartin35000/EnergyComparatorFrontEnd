@@ -3,6 +3,7 @@ import {FormControl, FormGroup} from "@angular/forms";
 import {EnergyEstimationComponent} from "./energy-estimation/energy-estimation.component";
 import {EnergyService} from "../energy.service";
 import {EnergyEstimation} from "./energy-estimation/EnergyEstimation";
+import {MatSnackBar} from "@angular/material/snack-bar";
 
 @Component({
     selector: 'app-energy-estimation-list',
@@ -18,7 +19,7 @@ export class EnergyEstimationNamedComponent implements OnInit {
     energyEstimations: EnergyEstimationComponent[] = [];
     currentEnergyEstimationComponent: EnergyEstimationComponent = new EnergyEstimationComponent();
 
-    constructor(private energyService: EnergyService) {
+    constructor(private energyService: EnergyService, private snackBar: MatSnackBar) {
     }
 
     ngOnInit(): void {
@@ -26,13 +27,27 @@ export class EnergyEstimationNamedComponent implements OnInit {
     }
 
     onSubmit() {
+        const energyEstimation: EnergyEstimation = new EnergyEstimation(this.currentEnergyEstimationComponent.energyFormTypedElectricity,
+            this.currentEnergyEstimationComponent.energyFormTypedGas,
+            this.form.value.energySupplier,
+            this.form.value.offerName
+        )
+
+        /*
         const energyEstimation: EnergyEstimation = {
             energy: this.currentEnergyEstimationComponent.energyFormTypedEnergy,
             gas: this.currentEnergyEstimationComponent.energyFormTypedGas,
             energySupplier: this.form.value.energySupplier,
             offerName: this.form.value.offerName,
+            annualPrice: EnergyEstimation.prototype.annualPrice,
         }
+
+         */
         this.energyService.addEnergyEstimations(energyEstimation);
+        this.snackBar.open('Estimations enregistrées', "OK", {
+            duration: 3000,
+            panelClass: ['green-snackbar', 'login-snackbar', 'center-top']
+        });
     }
 
     onCancel() {

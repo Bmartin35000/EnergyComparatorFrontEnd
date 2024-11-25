@@ -1,9 +1,9 @@
 <div class="horizontal_parent border">
     <div class="horizontal_child border blue">
-        <h1>Energie
+        <h1>Electricité
             <i class="material-icons">bolt</i>
         </h1>
-        <app-energy-form [energyFormTyped]="energyFormTypedEnergy"></app-energy-form>
+        <app-energy-form [energyFormTyped]="energyFormTypedElectricity"></app-energy-form>
     </div>
 
     <div class="horizontal_child border green">
@@ -15,7 +15,7 @@
 </div>
 
 <div class="center_parent">
-    <div *ngIf="energyFormTypedEnergy && energyFormTypedEnergy.total && energyFormTypedGas && energyFormTypedGas.total"
+    <div *ngIf="energyFormTypedElectricity && energyFormTypedElectricity.total && energyFormTypedGas && energyFormTypedGas.total"
          class="center_child border">
         <h1>Estimation des deux abonnements</h1>
         <mat-accordion>
@@ -23,7 +23,7 @@
                 <mat-expansion-panel-header>
                     <mat-panel-title class="center_child">Votre abonnement annuel est estimé
                         à {{
-                            energyFormTypedEnergy.total!.subscription.annualPrice + energyFormTypedEnergy.total!.kilowatt.annualPrice
+                            energyFormTypedElectricity.total!.subscription.annualPrice + energyFormTypedElectricity.total!.kilowatt.annualPrice
                             + energyFormTypedGas.total!.subscription.annualPrice + energyFormTypedGas.total!.kilowatt.annualPrice
                         }}
                         € par an.
@@ -31,10 +31,10 @@
                 </mat-expansion-panel-header>
                 <div class="horizontal_parent">
                     <div class="horizontal_child border blue">
-                        <h2>Energie
+                        <h2>Electricité
                             <i class="material-icons">bolt</i>
                         </h2>
-                        <app-energy-form-result [energyFormTyped]="energyFormTypedEnergy"></app-energy-form-result>
+                        <app-energy-form-result [energyFormTyped]="energyFormTypedElectricity"></app-energy-form-result>
                     </div>
                     <div class="horizontal_child border green">
                         <h2>Gaz

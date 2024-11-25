@@ -16,6 +16,10 @@ router-outlet + * {
     padding: 0 16px;
 }
 
+.margin1pc {
+    margin: 1%
+}
+
 /* Text */
 
 h1 {
@@ -87,18 +91,6 @@ label {
     cursor: auto;
 }
 
-/* Fancy Button */
-
-.fancy-button {
-    background-color: white;
-    color: #1976d2;
-}
-
-.fancy-button i.material-icons {
-    color: #1976d2;
-    padding-right: 4px;
-}
-
 /* Top Bar */
 
 app-top-bar {
@@ -117,23 +109,40 @@ app-top-bar h1 {
     margin: 0;
 }
 
-/* Checkout Cart, Shipping Prices */
-
-.cart-item, .shipping-item {
-    width: 100%;
-    min-width: 400px;
-    max-width: 450px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    padding: 16px 32px;
-    margin-bottom: 8px;
-    border-radius: 2px;
-    background-color: #EEEEEE;
-}
-
 /* expansion panel */
 
 div.mat-expansion-panel-body {
     padding: 0 !important;
 }
+
+/* snackbar */
+
+.green-snackbar {
+    background: rgb(65, 252, 134);
+    color: white;
+}
+
+.green-snackbar button {
+    background-color: rgb(65, 252, 134);
+    color: white;
+    border: none;
+}
+
+.red-snackbar {
+    background: #F44336;
+    color: white;
+}
+
+.red-snackbar button {
+    background-color: #F44336;
+    color: white !important;
+    border: none;
+}
+
+.center-top {
+    position: absolute !important;
+    top: 5%;
+    left: 40%;
+    transform: translate(0, -50%);
+}
+

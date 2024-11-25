@@ -3,7 +3,7 @@
         <mat-expansion-panel>
             <mat-expansion-panel-header>
                 <mat-panel-title>Votre abonnement annuel est estimé
-                    à {{ energyFormTyped.total!.subscription.annualPrice + energyFormTyped.total!.kilowatt.annualPrice }}
+                    à {{ energyFormTyped.total!.subscription.annualPrice + energyFormTyped.total!.kilowatt.annualPrice | roundedUp }}
                     € par an.
                 </mat-panel-title>
             </mat-expansion-panel-header>

@@ -10,7 +10,7 @@ import {EnergyFormTyped} from "./energy-form/EnergyFormTyped";
 export class EnergyEstimationComponent {
 
     @Input()
-    energyFormTypedEnergy: EnergyFormTyped = {type: EnergyType.Energy};
+    energyFormTypedElectricity: EnergyFormTyped = {type: EnergyType.Electricity};
     @Input()
     energyFormTypedGas: EnergyFormTyped = {type: EnergyType.Gas};
 
