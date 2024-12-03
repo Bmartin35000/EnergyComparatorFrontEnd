@@ -1,6 +1,6 @@
 <button (click)="onDeleteAll()" class="margin1pc">
     Supprimer les estimations
-    <i class="material-icons">delete</i>
+    <i class="material-icons white">delete</i>
 </button>
 
 <table [dataSource]="energyEstimations" class="width100pc" mat-table>
@@ -44,4 +44,18 @@
             }}€
         </td>
     </ng-container>
+
+    <ng-container matColumnDef="actions">
+        <th *matHeaderCellDef mat-header-cell>Actions</th>
+        <td *matCellDef="let element" mat-cell>
+            <button (click)="onDelete(element)" class="margin1pc">
+                <i class="material-icons white">delete</i>
+            </button>
+            <button (click)="onEdit(element)" class="margin1pc">
+                <i class="material-icons white">edit</i>
+            </button>
+        </td>
+    </ng-container>
+
+
 </table>

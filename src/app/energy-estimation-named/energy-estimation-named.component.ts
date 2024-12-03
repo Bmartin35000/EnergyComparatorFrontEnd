@@ -33,24 +33,15 @@ export class EnergyEstimationNamedComponent implements OnInit {
             this.form.value.offerName
         )
 
-        /*
-        const energyEstimation: EnergyEstimation = {
-            energy: this.currentEnergyEstimationComponent.energyFormTypedEnergy,
-            gas: this.currentEnergyEstimationComponent.energyFormTypedGas,
-            energySupplier: this.form.value.energySupplier,
-            offerName: this.form.value.offerName,
-            annualPrice: EnergyEstimation.prototype.annualPrice,
-        }
-
-         */
-        this.energyService.addEnergyEstimations(energyEstimation);
-        this.snackBar.open('Estimations enregistrées', "OK", {
-            duration: 3000,
-            panelClass: ['green-snackbar', 'login-snackbar', 'center-top']
+        this.energyService.addEnergyEstimations(energyEstimation).subscribe({
+            error: (e) => this.snackBar.open('Erreur lors de l\'ajout : ' + e.message, "OK", {
+                duration: 1000000,
+                panelClass: ['red-snackbar']
+            }),
+            complete: () => this.snackBar.open('Estimations enregistrées', "OK", {
+                duration: 3000,
+                panelClass: ['green-snackbar']
+            })
         });
-    }
-
-    onCancel() {
-        this.form.reset();
     }
 }

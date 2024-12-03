@@ -6,6 +6,7 @@ export class EnergyEstimation {
     gas: EnergyFormTyped;
     energySupplier: string;
     offerName: string;
+    id?: string;
 
     constructor(electricity: EnergyFormTyped, gas: EnergyFormTyped, energySupplier: string, offerName: string) {
         this.electricity = electricity;

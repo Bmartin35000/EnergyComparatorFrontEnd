@@ -2,29 +2,6 @@
     padding: 0;
 }
 
-.border {
-    border: 1px solid black;
-    margin: 1rem;
-    padding: 1rem;
-}
-
-.horizontal_parent {
-    text-align: center;
-}
-
-.horizontal_child {
-    display: inline-block;
-    vertical-align: middle;
-}
-
-.center_parent {
-    text-align: center;
-}
-
-.center_child {
-    display: inline-block;
-}
-
 .green {
     background-color: rgba(51, 170, 51, .1);
 }

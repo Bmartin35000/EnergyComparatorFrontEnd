@@ -19,6 +19,8 @@ import {
 import {MatTableModule} from "@angular/material/table";
 import {RoundedUp} from "./energy-estimation-list/roundedUp";
 import {MatSnackBarModule} from "@angular/material/snack-bar";
+import {EnergyEstimationDialogComponent} from './energy-estimation-dialog/energy-estimation-dialog.component';
+import {MatDialogModule} from "@angular/material/dialog";
 
 @NgModule({
     imports: [
@@ -34,7 +36,8 @@ import {MatSnackBarModule} from "@angular/material/snack-bar";
         BrowserAnimationsModule,
         MatIconModule,
         MatTableModule,
-        MatSnackBarModule
+        MatSnackBarModule,
+        MatDialogModule
     ],
     declarations: [
         AppComponent,
@@ -44,7 +47,8 @@ import {MatSnackBarModule} from "@angular/material/snack-bar";
         EnergyFormResultComponent,
         EnergyEstimationNamedComponent,
         EnergyEstimationListComponent,
-        RoundedUp
+        RoundedUp,
+        EnergyEstimationDialogComponent
     ],
     bootstrap: [AppComponent],
 })

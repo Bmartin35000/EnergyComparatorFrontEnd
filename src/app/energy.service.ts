@@ -8,19 +8,29 @@ import {Observable} from "rxjs";
 })
 export class EnergyService {
 
+    urlBackEndServer = "http://localhost:8080/";
+
     constructor(private httpClient: HttpClient) {
     }
 
     addEnergyEstimations(energyEstimation: EnergyEstimation) {
-        this.httpClient.post("http://localhost:8080/energyEstimation", energyEstimation).pipe().subscribe((res) => console.log(res));
+        return this.httpClient.post(this.urlBackEndServer + "energyEstimation", energyEstimation);
     }
 
     getEnergyEstimations(): Observable<EnergyEstimation[]> {
-        return this.httpClient.get<EnergyEstimation[]>("http://localhost:8080/energyEstimations");
+        return this.httpClient.get<EnergyEstimation[]>(this.urlBackEndServer + "energyEstimations");
+    }
+
+    editEnergyEstimation(energyEstimation: EnergyEstimation) {
+        return this.httpClient.put(this.urlBackEndServer + "energyEstimation/", energyEstimation);
     }
 
     deleteEnergyEstimations() {
-        this.httpClient.delete<EnergyEstimation[]>("http://localhost:8080/energyEstimations").subscribe();
+        return this.httpClient.delete<EnergyEstimation[]>(this.urlBackEndServer + "energyEstimations");
+    }
+
+    deleteEnergyEstimation(energyEstimation: EnergyEstimation) {
+        return this.httpClient.delete<EnergyEstimation>(this.urlBackEndServer + "energyEstimation/" + energyEstimation.id);
     }
 
     annualPrice(estimation: EnergyEstimation) {

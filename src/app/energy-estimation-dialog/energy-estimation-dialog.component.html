@@ -1,4 +1,4 @@
-<div class="center_parent ">
+<div class="center_parent">
     <div class="center_child border">
         <form (ngSubmit)="onSubmit()" [formGroup]="form">
             <label>
@@ -9,10 +9,7 @@
                 Nom de l'offre :
                 <input formControlName="offerName">
             </label>
-            <app-energy-estimation
-                    [energyFormTypedElectricity]="currentEnergyEstimationComponent.energyFormTypedElectricity"
-                    [energyFormTypedGas]="currentEnergyEstimationComponent.energyFormTypedGas"></app-energy-estimation>
-            <button class="margin1pc" type="reset">Réinitialiser</button>
+            <button (click)="onCancel()" class="margin1pc" type="button">Annuler</button>
             <button class="margin1pc" type="submit">Sauvegarder</button>
         </form>
     </div>

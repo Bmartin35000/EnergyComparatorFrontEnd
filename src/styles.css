@@ -1,8 +1,7 @@
-/* Global Styles */
+@import "../node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css"; /* Global Styles */
 
 * {
     font-family: 'Roboto', Arial, sans-serif;
-    color: #616161;
     box-sizing: border-box;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -18,6 +17,35 @@ router-outlet + * {
 
 .margin1pc {
     margin: 1%
+}
+
+.white {
+    color: white
+}
+
+.border {
+    border: 1px solid black;
+    margin: 1rem;
+    padding: 1rem;
+}
+
+/* centered div */
+.center_parent {
+    text-align: center;
+}
+
+.center_child {
+    display: inline-block;
+}
+
+/* horizontal div */
+.horizontal_parent {
+    text-align: center;
+}
+
+.horizontal_child {
+    display: inline-block;
+    vertical-align: middle;
 }
 
 /* Text */
@@ -139,10 +167,4 @@ div.mat-expansion-panel-body {
     border: none;
 }
 
-.center-top {
-    position: absolute !important;
-    top: 5%;
-    left: 40%;
-    transform: translate(0, -50%);
-}
 

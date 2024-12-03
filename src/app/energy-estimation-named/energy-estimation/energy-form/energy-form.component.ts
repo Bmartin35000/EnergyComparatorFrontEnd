@@ -35,8 +35,4 @@ export class EnergyFormComponent {
 
         this.energyFormTyped.total = energyResult;
     }
-
-    onCancel() {
-        this.form.reset();
-    }
 }
