@@ -10,8 +10,8 @@ import {EnergyEstimation} from "../energy-estimation-named/energy-estimation/Ene
 })
 export class EnergyEstimationDialogComponent {
 
-    energySupplier = this.energyEstimation.energySupplier + '';
-    offerName = this.energyEstimation.offerName + '';
+    energySupplier = this.energyEstimation.energySupplier;
+    offerName = this.energyEstimation.offerName;
 
     form: FormGroup = new FormGroup({
         energySupplier: new FormControl(this.energySupplier),

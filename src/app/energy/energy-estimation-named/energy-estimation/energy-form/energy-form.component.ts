@@ -21,6 +21,9 @@ export class EnergyFormComponent {
     @Input()
     energyFormTyped: EnergyFormTyped;
 
+    constructor() {
+    }
+
     onSubmit() {
         const energyResult: EnergyResult = {
             subscription: {

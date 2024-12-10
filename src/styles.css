@@ -29,6 +29,11 @@ router-outlet + * {
     padding: 1rem;
 }
 
+/* fields */
+input.ng-invalid.ng-touched {
+    border-color: red;
+}
+
 /* centered div */
 .center_parent {
     text-align: center;

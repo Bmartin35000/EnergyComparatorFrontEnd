@@ -1,6 +1,11 @@
-<a [routerLink]="['/']">
+<a [routerLink]="['/home']">
     <h1>Mon estimateur d'energie</h1>
 </a>
-<a [routerLink]="['/estimations']">
+<a *ngIf="isSignedIn()" [routerLink]="['/estimations']">
     <h1>Mes estimations</h1>
 </a>
+<button (click)="signOff()" *ngIf="isSignedIn()">
+    <h1>
+        <i class="material-icons">logout</i>
+    </h1>
+</button>

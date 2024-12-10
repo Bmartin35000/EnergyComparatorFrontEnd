@@ -6,6 +6,9 @@ TODO
 
 - ajouter des liens vers des fournisseurs
 - permettre la séparation des deux offres
-- permettre un PUT
-- déplacer la conso annuelle dans le cache
+- déplacer la conso annuelle dans un user
 - ajouter des tests
+- ajouter un signup avec sécurité
+- permettre les trads
+- deplacer url back end dans fichier de conf
+- vérifier champs form

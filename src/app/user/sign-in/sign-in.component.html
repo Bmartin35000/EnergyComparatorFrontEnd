@@ -1,0 +1,17 @@
+<div class="center_parent">
+    <div class="center_child border">
+        <h1>Connexion</h1>
+        <form (ngSubmit)="onSubmit()" [formGroup]="form">
+            <label>
+                Identifiant :
+                <input formControlName="id">
+            </label>
+            <label>
+                Mot de passe :
+                <input formControlName="password" type="password">
+            </label>
+            <button (click)="onSignUp()" class="margin1pc" type="button">S'inscrire</button>
+            <button class="margin1pc" type="submit">Se connecter</button>
+        </form>
+    </div>
+</div>

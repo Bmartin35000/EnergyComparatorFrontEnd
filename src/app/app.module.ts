@@ -9,18 +9,25 @@ import {HttpClientModule} from '@angular/common/http';
 import {MatExpansionModule} from "@angular/material/expansion";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {MatIconModule} from "@angular/material/icon";
-import {EnergyEstimationListComponent} from './energy-estimation-list/energy-estimation-list.component';
-import {EnergyEstimationNamedComponent} from "./energy-estimation-named/energy-estimation-named.component";
-import {EnergyFormComponent} from "./energy-estimation-named/energy-estimation/energy-form/energy-form.component";
-import {EnergyEstimationComponent} from "./energy-estimation-named/energy-estimation/energy-estimation.component";
+import {EnergyEstimationListComponent} from './energy/energy-estimation-list/energy-estimation-list.component';
+import {EnergyEstimationNamedComponent} from "./energy/energy-estimation-named/energy-estimation-named.component";
+import {
+    EnergyFormComponent
+} from "./energy/energy-estimation-named/energy-estimation/energy-form/energy-form.component";
+import {
+    EnergyEstimationComponent
+} from "./energy/energy-estimation-named/energy-estimation/energy-estimation.component";
 import {
     EnergyFormResultComponent
-} from "./energy-estimation-named/energy-estimation/energy-form/energy-form-result/energy-form-result.component";
+} from "./energy/energy-estimation-named/energy-estimation/energy-form/energy-form-result/energy-form-result.component";
 import {MatTableModule} from "@angular/material/table";
-import {RoundedUp} from "./energy-estimation-list/roundedUp";
+import {RoundedUp} from "./energy/energy-estimation-list/roundedUp";
 import {MatSnackBarModule} from "@angular/material/snack-bar";
-import {EnergyEstimationDialogComponent} from './energy-estimation-dialog/energy-estimation-dialog.component';
+import {EnergyEstimationDialogComponent} from './energy/energy-estimation-dialog/energy-estimation-dialog.component';
 import {MatDialogModule} from "@angular/material/dialog";
+import {SignUpComponent} from './user/sign-up/sign-up.component';
+import {SignInComponent} from './user/sign-in/sign-in.component';
+import {Guard} from "./guard";
 
 @NgModule({
     imports: [
@@ -28,8 +35,11 @@ import {MatDialogModule} from "@angular/material/dialog";
         HttpClientModule,
         ReactiveFormsModule,
         RouterModule.forRoot([
-            {path: '', component: EnergyEstimationNamedComponent},
-            {path: 'estimations', component: EnergyEstimationListComponent},
+            {path: '', redirectTo: 'signUp', pathMatch: 'full'},
+            {path: 'signUp', component: SignUpComponent},
+            {path: 'signIn', component: SignInComponent},
+            {path: 'home', component: EnergyEstimationNamedComponent, canActivate: [Guard]},
+            {path: 'estimations', component: EnergyEstimationListComponent, canActivate: [Guard]},
         ]),
         FormsModule,
         MatExpansionModule,
@@ -48,15 +58,12 @@ import {MatDialogModule} from "@angular/material/dialog";
         EnergyEstimationNamedComponent,
         EnergyEstimationListComponent,
         RoundedUp,
-        EnergyEstimationDialogComponent
+        EnergyEstimationDialogComponent,
+        SignUpComponent,
+        SignInComponent
     ],
     bootstrap: [AppComponent],
+    providers: [Guard],
 })
 export class AppModule {
 }
-
-/*
-Copyright Google LLC. All Rights Reserved.
-Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at https://angular.io/license
-*/
